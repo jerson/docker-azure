@@ -2,7 +2,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 // Import Spectacle Core tags
-import {BlockQuote, Cite, Deck, Heading, Image, Link, List, ListItem, Quote, S, Slide, Text} from 'spectacle'
+import {Appear, BlockQuote, Cite, Deck, Heading, Image, Link, List, ListItem, Quote, S, Slide, Text} from 'spectacle'
 // Import image preloader util
 import preloader from 'spectacle/lib/utils/preloader'
 // Import theme
@@ -16,6 +16,7 @@ require("spectacle/lib/themes/default/index.css");
 
 const images = {
     dockerLogo: require("../assets/docker-logo.png"),
+    thinkingFace: require("../assets/thinking-face.jpg"),
     city: require("../assets/city.jpg"),
     kat: require("../assets/kat.png"),
     logo: require("../assets/formidable-logo.svg"),
@@ -136,22 +137,19 @@ export default class Presentation extends React.Component {
 
                 </Slide>
                 <Slide transition={["fade"]} bgImage={image} bgColor="primary">
-                    <Heading size={6} textColor="primary" caps>Typography</Heading>
-                    <Heading size={1} textColor="secondary">Heading 1</Heading>
-                    <Heading size={2} textColor="secondary">Heading 2</Heading>
-                    <Heading size={3} textColor="secondary">Heading 3</Heading>
-                    <Heading size={4} textColor="secondary">Heading 4</Heading>
-                    <Heading size={5} textColor="secondary">Heading 5</Heading>
-                    <Text size={6} textColor="secondary">Standard text</Text>
+                    <div className="animated pulse infinite">
+                        <Heading size={2} textColor="secondary" caps>Comenzemos</Heading>
+                    </div>
                 </Slide>
-                <Slide transition={["fade"]} bgColor="primary" textColor="tertiary">
-                    <Heading size={6} textColor="secondary" caps>Standard List</Heading>
-                    <List>
-                        <ListItem>Item 1</ListItem>
-                        <ListItem>Item 2</ListItem>
-                        <ListItem>Item 3</ListItem>
-                        <ListItem>Item 4</ListItem>
-                    </List>
+                <Slide transition={["fade"]} bgImage={image} bgColor="primary" textColor="tertiary">
+                    <Heading size={6} textColor="secondary" caps>Recuerdan su primer proyecto?</Heading>
+
+                    <Appear>
+                        <Image src={images.thinkingFace} width={500}/>
+                    </Appear>
+
+
+
                 </Slide>
                 <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
                     <BlockQuote>
