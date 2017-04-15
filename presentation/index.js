@@ -107,7 +107,7 @@ export default class Presentation extends React.Component {
                         Docker
                     </Heading>
                     <Heading size={1} fit bold caps lineHeight={1} textColor="secondary">
-                        en Windows Azure
+                        en Microsoft Azure
                     </Heading>
                     <Text margin="30px 0 0" bold textColor="tertiary" textSize={28}>
                         Gerson Alexander Pardo Gamez
@@ -332,8 +332,15 @@ export default class Presentation extends React.Component {
 
 
                 <Slide transition={['fade']} bgImage={image} bgColor="primary">
-                    <Heading size={4} textColor="secondary" caps>Aqui va la presentacion...</Heading>
-                   
+                    <Heading size={4} textColor="secondary" caps>Visita</Heading>
+                    <Heading size={6} textColor="tertiary" caps>azure.microsoft.com/</Heading>
+
+
+                </Slide>
+
+                <Slide transition={['fade']} bgImage={image} bgColor="primary">
+                    <Heading size={4} textColor="secondary" caps>azure.microsoft.com/</Heading>
+
                 </Slide>
 
 
