@@ -37,14 +37,16 @@ const images = {
   dockerDistributions: require("../assets/docker-distributions.png"),
   dockerPanchesco: require("../assets/docker-panchesco.png"),
   dockerMachine: require("../assets/docker-machine.png"),
-  dockerComparision: require("../assets/docker-comparision.jpg"),
+  dockerComparision: require("../assets/docker-comparision.png"),
   dockerContainers: require("../assets/docker-containers.png"),
   dockerSad: require("../assets/docker-sad.png"),
   dockerHappy: require("../assets/docker-happy.png"),
   whoCanUse: require("../assets/who-can-use.png"),
   dockerInstall: require("../assets/docker-install.png"),
   dockerSpace: require("../assets/docker-space.png"),
-  register: require("../assets/register.png")
+  install: require("../assets/install.png"),
+  register: require("../assets/register.png"),
+  dockerHelp: require("../assets/docker-help.png")
 };
 
 preloader(images);
@@ -69,9 +71,12 @@ export default class Presentation extends React.Component {
   };
 
   componentDidMount() {
-    this.handleResizeBinded = this.handleResize.bind(this);
-    window.addEventListener("resize", this.handleResizeBinded);
-    this.handleResize();
+    //this.handleResizeBinded = this.handleResize.bind(this);
+    //window.addEventListener("resize", this.handleResizeBinded);
+    //this.handleResize();
+    setInterval(() => {
+      this.generateBackground();
+    }, 2000);
   }
 
   componentWillUnmount() {
@@ -92,13 +97,13 @@ export default class Presentation extends React.Component {
     let deck = ReactDOM.findDOMNode(this.refs.deck);
 
     let colorFunc = (x, y) => {
-      return "hsl(" + Math.floor(Math.abs(x * y) * 360) + ",80%,60%)";
+      return "hsl(" + Math.floor(Math.abs(x * y) * 360) + ",0%,60%)";
     };
 
     let pattern = Trianglify({
       //color_function: colorFunc,
       cell_size: 200,
-      x_colors: ["#0087c9", "#fff", "#f4f4f4", "#fff", "#0087c9"],
+      x_colors: ["#15a1e9", "#fff", "#f4f4f4", "#fff", "#25aeec"],
       width: deck.clientWidth,
       height: deck.clientHeight
     });
@@ -334,7 +339,7 @@ export default class Presentation extends React.Component {
           <Appear>
             <Text textSize={32}>
               Tendrias que ponerle a leer tutoriales y talvez hacer modificaciones a tu
-              proyecto.{" "}
+              proyecto.
             </Text>
           </Appear>
 
@@ -343,7 +348,7 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgImage={image} bgColor="primary">
 
           <Heading size={4} textColor="secondary" caps>
-            ¿Aún no te convences?{" "}
+            ¿Aún no te convences?
           </Heading>
           <Image src={images.thinkingFace} width={500} />
 
@@ -379,7 +384,7 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgImage={image} bgColor="primary">
           <Heading size={4} textColor="quartenary" caps>Paso 1:</Heading>
           <Heading size={4} textColor="secondary" caps>
-            crearse una cuenta en Azure
+            Crearse una cuenta en Azure
           </Heading>
           <Heading size={6} textColor="tertiary" caps>
             azure.microsoft.com
@@ -387,18 +392,38 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["fade"]} bgImage={image} bgColor="primary">
-          <Heading size={6} textColor="quartenary" caps>Paso 1:</Heading>
-          <Heading size={6} textColor="secondary" caps>
-            crearse una cuenta en Azure
-          </Heading>
+          <Heading size={6} textColor="quartenary" caps>Paso 1: Listo</Heading>
           <Image src={images.register} width={"100%"} />
         </Slide>
 
         <Slide transition={["fade"]} bgImage={image} bgColor="primary">
+          <Heading size={4} textColor="quartenary" caps>Paso 2:</Heading>
           <Heading size={4} textColor="secondary" caps>
-            azure.microsoft.com/
+            Instalar Docker en Azure
           </Heading>
+          <Heading size={6} textColor="tertiary" caps>
+            portal.azure.com
+          </Heading>
+        </Slide>
 
+        <Slide transition={["fade"]} bgImage={image} bgColor="primary">
+          <Heading size={6} textColor="quartenary" caps>Paso 2: listo</Heading>
+          <Image src={images.install} width={"70%"} />
+        </Slide>
+
+        <Slide transition={["fade"]} bgImage={image} bgColor="primary">
+          <Heading size={4} textColor="quartenary" caps>Paso 3:</Heading>
+          <Heading size={4} textColor="secondary" caps>
+            Instalar Docker en tu computadora
+          </Heading>
+          <Heading size={6} textColor="tertiary" caps>
+            docker.com/get-docker
+          </Heading>
+        </Slide>
+
+        <Slide transition={["fade"]} bgImage={image} bgColor="primary">
+          <Heading size={6} textColor="quartenary" caps>Paso 3: listo</Heading>
+          <Image src={images.dockerHelp} width={"70%"} />
         </Slide>
 
         <Slide transition={["fade"]} bgImage={image} bgColor="primary">
