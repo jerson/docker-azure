@@ -1,0 +1,10 @@
+version: '2'
+services:
+   node:
+        build: .
+        image: jerson/node-react:1.0
+        ports:
+           - '3005:3000'
+        volumes:
+          - ./:/www
+        entrypoint: /www/entrypoint.sh
