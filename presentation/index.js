@@ -44,9 +44,11 @@ const images = {
   whoCanUse: require("../assets/who-can-use.png"),
   dockerInstall: require("../assets/docker-install.png"),
   dockerSpace: require("../assets/docker-space.png"),
+  dockerVersion: require("../assets/docker-version.png"),
   install: require("../assets/install.png"),
   register: require("../assets/register.png"),
-  dockerHelp: require("../assets/docker-help.png")
+  attention: require("../assets/attention.jpg"),
+  chart: require("../assets/chart.png")
 };
 
 preloader(images);
@@ -71,12 +73,12 @@ export default class Presentation extends React.Component {
   };
 
   componentDidMount() {
-    //this.handleResizeBinded = this.handleResize.bind(this);
-    //window.addEventListener("resize", this.handleResizeBinded);
-    //this.handleResize();
-    setInterval(() => {
-      this.generateBackground();
-    }, 2000);
+    this.handleResizeBinded = this.handleResize.bind(this);
+    window.addEventListener("resize", this.handleResizeBinded);
+    this.handleResize();
+    // setInterval(() => {
+    //     this.generateBackground();
+    // }, 2000);
   }
 
   componentWillUnmount() {
@@ -408,28 +410,53 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["fade"]} bgImage={image} bgColor="primary">
           <Heading size={6} textColor="quartenary" caps>Paso 2: listo</Heading>
-          <Image src={images.install} width={"70%"} />
+          <Image src={images.install} width={"100%"} />
         </Slide>
 
         <Slide transition={["fade"]} bgImage={image} bgColor="primary">
           <Heading size={4} textColor="quartenary" caps>Paso 3:</Heading>
           <Heading size={4} textColor="secondary" caps>
-            Instalar Docker en tu computadora
+            Conectarte al servidor
           </Heading>
           <Heading size={6} textColor="tertiary" caps>
-            docker.com/get-docker
+            ssh usuario@10.10.10.10
           </Heading>
         </Slide>
 
         <Slide transition={["fade"]} bgImage={image} bgColor="primary">
           <Heading size={6} textColor="quartenary" caps>Paso 3: listo</Heading>
-          <Image src={images.dockerHelp} width={"70%"} />
+          <Image src={images.dockerVersion} width={"100%"} />
+        </Slide>
+
+        <Slide transition={["fade"]} bgImage={image} bgColor="primary">
+          <Heading size={4} textColor="quartenary" caps>Paso 4:</Heading>
+          <div className="animated shake infinite">
+            <Heading size={4} textColor="secondary" caps>
+              Prestar atención
+            </Heading>
+          </div>
+          <Image src={images.attention} width={"50%"} />
+
+        </Slide>
+
+        <Slide transition={["fade"]} bgImage={image} bgColor="primary">
+          <Heading size={4} textColor="tertiary" caps>
+            ¿Eso fue fácil no?
+          </Heading>
+        </Slide>
+
+        <Slide transition={["fade"]} bgImage={image} bgColor="primary">
+          <Heading size={4} textColor="quartenary" caps>
+            ¿Docker tiene futuro?
+          </Heading>
+          <Image src={images.chart} width={"100%"} />
+
         </Slide>
 
         <Slide transition={["fade"]} bgImage={image} bgColor="primary">
           <Heading size={4} textColor="secondary" caps>Ahora si</Heading>
-          <div className="animated pulse infinite">
-            <Heading size={4} textColor="tertiary" caps>Preguntame</Heading>
+          <div className="animated flash infinite">
+            <Heading size={4} textColor="tertiary" caps>¿Preguntas?</Heading>
           </div>
 
         </Slide>
