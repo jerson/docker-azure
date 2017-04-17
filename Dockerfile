@@ -6,4 +6,4 @@ WORKDIR /www
 
 RUN apk add --no-cache git 
 
-CMD ["/bin/sh"]
+ENTRYPOINT ["node"]
