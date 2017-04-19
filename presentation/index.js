@@ -266,17 +266,6 @@ export default class Presentation extends React.Component {
             virtual?
           </Heading>
 
-          <List>
-            <ListItem>
-              Realmente el concepto es algo similar, Pero un contenedor es más ligero, ya que mientras que
-              a una máquina virtual
-              necesitas instalarle un sistema operativo para funcionar, un contenedor de Docker
-              funciona
-              utilizando el sistema operativo que tiene la máquina en la que se ejecuta el
-              contenedor.
-            </ListItem>
-
-          </List>
         </Slide>
 
         <Slide transition={["fade"]} bgImage={image} bgColor="primary">
